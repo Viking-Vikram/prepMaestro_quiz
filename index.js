@@ -30,7 +30,7 @@ const startLogoutTimer = function () {
 	}
 	return timer;
 };
-// startLogoutTimer();
+startLogoutTimer();
 
 drop.addEventListener("click", () => {
 	paragraph.classList.toggle("show");
