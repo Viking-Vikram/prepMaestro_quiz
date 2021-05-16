@@ -62,7 +62,6 @@ h4 {
 }
 p {
 	margin-bottom: 1.25rem;
-	color: var(--clr-grey-5);
 }
 @media screen and (min-width: 800px) {
 	h1 {
@@ -136,7 +135,7 @@ Navbar
 
 /*
 =============== 
-question palette and timer
+question palette,timer and info
 ===============
 */
 
