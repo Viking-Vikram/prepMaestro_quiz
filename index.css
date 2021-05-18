@@ -145,6 +145,7 @@ question palette,timer and info
 }
 .question-palette {
 	background-color: var(--clr-white);
+	/* max-width: 20rem; */
 	width: 20rem;
 	height: 10.5rem;
 	margin: 1rem;
@@ -159,12 +160,11 @@ question palette,timer and info
 	background-color: var(--clr-grey);
 	min-height: 40px;
 	min-width: 40px;
-	/* border-radius: 50%; */
 	border-radius: var(--radius);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0.7rem;
+	display: grid;
+	place-items: center;
+	margin: 0.5rem 0.7rem;
+	font-size: 1.3rem;
 	cursor: pointer;
 }
 .number:hover {
@@ -183,7 +183,7 @@ question palette,timer and info
 	background-color: var(--clr-white);
 	height: 3rem;
 	width: 8rem;
-	margin: 1rem 5px 1rem 5px;
+	margin: 1rem 5px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -217,47 +217,21 @@ question palette,timer and info
 .iunanswered {
 	color: var(--clr-grey);
 }
-@media screen and (min-width: 928px) {
-	.question-palette {
-		flex-wrap: nowrap;
-	}
-	.timer-container {
-		height: 3.9rem;
-		margin-right: 1rem;
-	}
-	.timer {
-		font-size: 1rem;
-	}
-	.question-palette {
-		height: 100%;
-		align-items: center;
-	}
-	.qt-container {
-		position: relative;
-	}
-	.info {
-		position: absolute;
-		left: 0;
-		width: 98%;
-		margin: 0rem 1rem 1rem 1rem;
-		display: flex;
-		justify-content: space-evenly;
-	}
-}
 /*
 =============== 
 question
 ===============
 */
+
 .question-container {
 	background-color: white;
-	margin: 2rem 1rem;
+	margin: 1rem 1rem 6rem 1rem;
 	border: 0.2rem solid var(--clr-pr-light);
 	padding: 1rem;
 	font-size: 1rem;
-	height: 100%;
 	border-radius: var(--radius);
 }
+
 .qnumber {
 	box-shadow: var(--dark-shadow);
 	background-color: var(--clr-pr-light);
@@ -266,6 +240,7 @@ question
 	border-radius: var(--radius);
 	color: var(--clr-pr-dark);
 }
+/*==========PARAGRAPH QUESTION===============*/
 .paragraph {
 	padding-bottom: 2rem;
 	height: 0;
@@ -283,6 +258,7 @@ question
 .show {
 	height: 100%;
 }
+/*==========PARAGRAPH QUESTION===============*/
 .question {
 	margin-top: 1rem;
 	padding: 0.5rem;
@@ -329,6 +305,8 @@ input[type="checkbox"]:checked:after {
 }
 .question-footer {
 	margin-top: 2rem;
+	display: flex;
+	justify-content: space-between;
 }
 .check {
 	font-size: 1.2rem;
@@ -341,18 +319,46 @@ input[type="checkbox"]:after {
 input[type="checkbox"]:checked:after {
 	border-radius: 0;
 }
-.clear {
-	position: absolute;
-	right: 2rem;
-}
+
 @media screen and (min-width: 928px) {
-	.option {
+	.qt-container {
 		display: block;
+		position: fixed;
+		top: 5rem;
+		left: 0;
+		transition: var(--transition);
+	}
+	.position {
+		top: 0;
+		left: 0;
+	}
+	.question-palette {
+		width: 12rem;
+		/* height: 14rem; */
+		height: 22.7rem;
+	}
+	.timer-container {
+		width: 12rem;
+		margin: auto auto 1rem auto;
+	}
+	.info {
+		width: 12rem;
+		margin: auto;
+	}
+	.option {
 		padding: 0.5rem;
 	}
 	.question-container {
-		margin: 5rem 1rem;
+		margin: 2rem 1rem 6rem 15rem;
+		min-height: 35rem;
+		display: grid;
+		align-items: center;
 	}
+	.qnumber {
+		font-size: 1.5rem;
+		justify-self: flex-start;
+	}
+	/*=======PARAGRAPH QUESTION==========*/
 	.paragraph {
 		padding-bottom: 0;
 		height: auto;
@@ -360,12 +366,12 @@ input[type="checkbox"]:checked:after {
 	.paragraph i {
 		display: none;
 	}
-	.flex {
+	.grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		column-gap: 2rem;
-		padding: 0;
 	}
+	/*=======PARAGRAPH QUESTION==========*/
 }
 /*
 =============== 
@@ -378,6 +384,9 @@ footer
 	width: 100vw;
 	display: flex;
 	justify-content: space-around;
+	position: fixed;
+	bottom: 0;
+	left: 0;
 }
 .prev,
 .next,
@@ -386,11 +395,8 @@ footer
 	color: var(--clr-pr-dark);
 	text-transform: uppercase;
 }
-.prev,
-.next {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	place-items: center;
+button i {
+	margin: 0 5px;
 }
 @media screen and (min-width: 928px) {
 	.footer {
