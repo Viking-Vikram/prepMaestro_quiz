@@ -14,7 +14,7 @@ const startLogoutTimer = function () {
 		labelTimer.textContent = `${min} Min : ${sec} Secs`;
 
 		if (time <= 10) {
-			timerContainer.style.backgroundColor = "red";
+			timerContainer.style.animation = "blink 1s infinite";
 		}
 		if (time === 0) {
 			clearInterval(timer);

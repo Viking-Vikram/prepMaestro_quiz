@@ -190,6 +190,23 @@ question palette,timer and info
 	border-radius: var(--radius);
 	box-shadow: var(--dark-shadow);
 }
+@keyframes blink {
+	0% {
+		background-color: var(--clr-white);
+	}
+	49% {
+		background-color: var(--clr-white);
+	}
+	50% {
+		background-color: red;
+	}
+	99% {
+		background-color: red;
+	}
+	100% {
+		background-color: var(--clr-white);
+	}
+}
 .info {
 	background-color: var(--clr-white);
 	border-radius: var(--radius);
@@ -341,6 +358,7 @@ input[type="checkbox"]:checked:after {
 		width: 12rem;
 		margin: auto auto 1rem auto;
 	}
+
 	.info {
 		width: 12rem;
 		margin: auto;
@@ -387,6 +405,7 @@ footer
 	position: fixed;
 	bottom: 0;
 	left: 0;
+	box-shadow: 0px 3px 10px black;
 }
 .prev,
 .next,
